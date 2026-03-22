@@ -208,36 +208,7 @@
       }
     }
 
-    /* Contact form responsive */
-    @media screen and (max-width: 479px) {
-      #contact-us .heading-style-wrapper {
-        margin-bottom: 20px !important;
-      }
-
-      #contact-us .contact-form-banner {
-        flex-direction: column-reverse !important;
-        gap: 20px !important;
-      }
-
-      #contact-us .contact-form-banner>div {
-        max-width: 100% !important;
-      }
-
-      #contact-us [style*="grid-template-columns: 1fr 1fr"] {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-      }
-
-      .input-field {
-        width: 100% !important;
-        box-sizing: border-box !important;
-        height: auto !important;
-        min-height: 48px !important;
-        padding: 10px 12px !important;
-        font-size: 16px !important;
-        line-height: normal !important;
-      }
-    }
+    /* Contact form responsive - handled in main responsive section below */
 
     /* Select dropdown styling */
     #contact-service option,
@@ -475,6 +446,27 @@
       font-size: 15px !important;
       line-height: 1.5 !important;
       min-height: 50px;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 4px;
+      color: #fff;
+      transition: border-color 0.3s ease;
+    }
+
+    .input-field::placeholder {
+      color: #888;
+      opacity: 1;
+      font-size: inherit;
+      white-space: nowrap;
+      overflow: visible;
+      text-overflow: clip;
+    }
+
+    .input-field:focus {
+      border-color: #ff1d46;
+      outline: none;
     }
 
     .input-field.message {
@@ -485,7 +477,7 @@
       resize: vertical;
     }
 
-    /* Responsive */
+    /* Responsive - Tablet */
     @media screen and (max-width: 767px) {
       .cta-section {
         padding: 70px 0;
@@ -502,89 +494,99 @@
         gap: 25px;
         margin-bottom: 35px;
       }
+
+      .form-row-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 15px;
+      }
+
+      .input-field {
+        padding: 14px 16px !important;
+        font-size: 16px !important;
+        min-height: 52px;
+        margin-bottom: 12px;
+      }
+
+      .input-field::placeholder {
+        font-size: 16px !important;
+      }
+
+      .input-field.message {
+        min-height: 120px;
+        margin-bottom: 20px;
+      }
+
+      .contact-form-banner {
+        flex-direction: column !important;
+      }
+
+      .contact-form-banner > div {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
     }
 
-  @media screen and (max-width: 767px) {
-    .form-row-grid {
-      grid-template-columns: 1fr;
-      gap: 0;
-      margin-bottom: 15px;
+    /* Responsive - Mobile */
+    @media screen and (max-width: 479px) {
+      .cta-section {
+        padding: 50px 0;
+      }
+
+      .cta-features {
+        gap: 15px;
+      }
+
+      .cta-buttons-wrapper {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .cta-buttons-wrapper .primary-button,
+      .cta-buttons-wrapper .secondary-button {
+        width: 100%;
+      }
+
+      .cta-description {
+        font-size: 15px;
+        line-height: 24px;
+        margin-bottom: 30px;
+      }
+
+      .form-row-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .input-field {
+        padding: 14px 16px !important;
+        font-size: 16px !important;
+        min-height: 52px;
+        margin-bottom: 14px;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .input-field::placeholder {
+        font-size: 16px !important;
+        color: #999;
+      }
+
+      .input-field.message {
+        min-height: 120px;
+        margin-bottom: 18px;
+      }
+
+      .contact-form-banner {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+
+      .contact-form-banner > div {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
     }
-
-    .input-field {
-      padding: 12px 14px !important;
-      font-size: 16px !important;
-      min-height: 48px;
-      margin-bottom: 12px;
-    }
-
-    .input-field.message {
-      min-height: 120px;
-      margin-bottom: 20px;
-    }
-
-    .contact-form-banner {
-      flex-direction: column !important;
-    }
-
-    .contact-form-banner > div {
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-  }
-
-  @media screen and (max-width: 479px) {
-  .cta-section {
-    padding: 50px 0;
-  }
-
-  .cta-features {
-    gap: 15px;
-  }
-
-  .cta-buttons-wrapper {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .cta-buttons-wrapper .primary-button,
-  .cta-buttons-wrapper .secondary-button {
-    width: 100%;
-  }
-
-  .cta-description {
-    font-size: 15px;
-    line-height: 24px;
-    margin-bottom: 30px;
-  }
-
-  .form-row-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .input-field {
-    padding: 12px 14px !important;
-    font-size: 16px !important;
-    min-height: 48px;
-    margin-bottom: 12px;
-  }
-
-  .input-field.message {
-    min-height: 110px;
-    margin-bottom: 16px;
-  }
-
-  .contact-form-banner {
-    flex-direction: column !important;
-    gap: 20px !important;
-  }
-
-  .contact-form-banner > div {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  }
   </style>
 
 
@@ -2750,16 +2752,16 @@
               <form class="contact-form" id="contact-form" name="contact-form" method="post" action="#">
                 <div class="form-row-grid">
                   <input class="input-field w-input" id="contact-name" maxlength="256" name="contact-name"
-                    placeholder="Your Name" required="" type="text" />
+                    placeholder="Name" required="" type="text" autocomplete="name" />
                   <input class="input-field w-input" id="contact-email" maxlength="256" name="contact-email"
-                    placeholder="Your Email" required="" type="email" />
+                    placeholder="Email" required="" type="email" autocomplete="email" />
                 </div>
                 <div class="form-row-grid">
                   <input class="input-field w-input" id="contact-phone" maxlength="256" name="contact-phone"
-                    placeholder="Phone Number" type="tel" />
+                    placeholder="Phone" type="tel" autocomplete="tel" />
                   <select class="input-field w-input" id="contact-service" name="contact-service" required=""
-                    style="color:#ddd;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg fill=&quot;%23ddd&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;><path d=&quot;M7 10l5 5 5-5z&quot;/></svg>');background-repeat:no-repeat;background-position:right 12px center;background-size:24px;">
-                    <option value="" disabled="" selected="">Select Service</option>
+                    style="color:#999;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg fill=&quot;%23999&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;><path d=&quot;M7 10l5 5 5-5z&quot;/></svg>');background-repeat:no-repeat;background-position:right 12px center;background-size:24px;padding-right:40px;">
+                    <option value="" disabled="" selected="">Service</option>
                     <optgroup label="Haircuts">
                       <option value="Haircut">Haircut - $25+</option>
                       <option value="Skin Fade">Skin Fade - $30+</option>
@@ -2767,19 +2769,18 @@
                     </optgroup>
                     <optgroup label="Beard &amp; Grooming">
                       <option value="Haircut and Beard">Haircut &amp; Beard - $50+</option>
-                      <option value="Beard Grooming">Beard Grooming &amp; Conditioning - $10+</option>
-                      <option value="Beard Maintenance">Beard Maintenance (Add On)</option>
+                      <option value="Beard Grooming">Beard Grooming - $10+</option>
+                      <option value="Beard Maintenance">Beard Maintenance</option>
                     </optgroup>
                     <optgroup label="Premium Packages">
-                      <option value="Full Service">Full Service: Cut, Style, Beard Sculpt &amp; Condition - $55+
-                      </option>
-                      <option value="Executive Mobile Grooming">Executive Mobile Grooming - $65+</option>
-                      <option value="VIP Package">VIP Package: Cut, Shave, Beard &amp; Scalp Treatment - $80+</option>
+                      <option value="Full Service">Full Service - $55+</option>
+                      <option value="Executive Mobile Grooming">Executive Mobile - $65+</option>
+                      <option value="VIP Package">VIP Package - $80+</option>
                     </optgroup>
                   </select>
                 </div>
                 <textarea class="input-field message w-input" id="contact-message" maxlength="5000"
-                  name="contact-message" placeholder="Write your message..." required=""></textarea>
+                  name="contact-message" placeholder="Your message..." required=""></textarea>
                 <a class="primary-button w-inline-block" href="#" id="contact-submit-btn"
                   style="display:inline-flex;width:auto;cursor:pointer;">
                   <div class="button-text-wrapper">
@@ -3196,6 +3197,23 @@
       );
     });
 
+  </script>
+
+  <!-- Contact Form Select Handler -->
+  <script>
+    (function() {
+      var serviceSelect = document.getElementById('contact-service');
+      if (serviceSelect) {
+        // Update color when selection changes
+        serviceSelect.addEventListener('change', function() {
+          if (this.value) {
+            this.style.color = '#fff';
+          } else {
+            this.style.color = '#999';
+          }
+        });
+      }
+    })();
   </script>
 </body>
 
