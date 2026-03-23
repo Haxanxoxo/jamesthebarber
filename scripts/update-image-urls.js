@@ -2,9 +2,6 @@ import https from 'https';
 import fs from 'fs';
 import path from 'path';
 
-const projectRoot = '/vercel/share/v0-project';
-const imageDir = path.join(projectRoot, 'images');
-
 // Mapping of external URLs to local filenames
 const imageMap = {
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-TzelzmW3jGiCHw3AFj5Ubmh6EcDruc.png': 'images/testimonial-marcus.png',
@@ -47,7 +44,7 @@ async function downloadAllImages() {
   console.log('[v0] Starting image download...');
   
   for (const [url, localPath] of Object.entries(imageMap)) {
-    const fullPath = path.join(projectRoot, localPath);
+    const fullPath = path.resolve(localPath);
     try {
       // Check if file already exists
       if (fs.existsSync(fullPath)) {
@@ -66,7 +63,7 @@ async function downloadAllImages() {
   console.log('[v0] Download complete. Now update HTML file...');
   
   // Read HTML file
-  const htmlPath = path.join(projectRoot, 'index.html');
+  const htmlPath = path.resolve('index.html');
   let htmlContent = fs.readFileSync(htmlPath, 'utf8');
   
   // Replace all external URLs with local paths
