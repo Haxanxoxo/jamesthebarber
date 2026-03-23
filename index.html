@@ -631,8 +631,6 @@
       margin-top: 30px !important;
       padding: 0 15px !important;
       box-sizing: border-box !important;
-      max-width: 100%;
-      overflow: visible !important;
     }
 
     .testimonial-tab {
@@ -640,20 +638,6 @@
       flex-direction: column !important;
       align-items: center !important;
       justify-content: center !important;
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-
-    .testimonial-content {
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-    }
-
-    .w-tab-pane {
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
     }
 
     @media screen and (max-width: 479px) {
@@ -664,263 +648,18 @@
         flex-wrap: nowrap !important;
         overflow: hidden !important;
         max-width: 100%;
-        width: 100% !important;
       }
 
       .testimonial-dot {
         width: 10px;
         height: 10px;
-        flex-shrink: 0;
       }
 
       .tab-link {
         padding: 4px !important;
         flex-shrink: 0;
-        min-width: 0;
-      }
-
-      .testimonial-tab {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-
-      .testimonial-content {
-        padding: 0 15px !important;
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      .w-tab-pane {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
       }
     }
-  </style>
-
-  <style>
-    /* Global Layout Fix - Desktop */
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* Container consistency */
-    .container {
-      width: 100% !important;
-      max-width: 100%;
-      box-sizing: border-box !important;
-      padding-left: 20px;
-      padding-right: 20px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Section alignment */
-    section {
-      width: 100%;
-      max-width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    /* Main content area */
-    main,
-    .main-content {
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* Flexbox standardization */
-    .flex-container,
-    .flex-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* Grid standardization */
-    .grid-container {
-      display: grid;
-      width: 100%;
-      max-width: 100%;
-      gap: 20px;
-      box-sizing: border-box;
-    }
-
-    /* Image responsiveness */
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* Navbar fixes */
-    nav, navbar, .navbar {
-      width: 100%;
-      max-width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-
-    /* Hero section fixes */
-    .hero-slider,
-    .hero-section {
-      width: 100%;
-      max-width: 100%;
-      position: relative;
-    }
-
-    /* Responsive Typography */
-    h1, h2, h3, h4, h5, h6 {
-      width: 100%;
-      word-wrap: break-word;
-    }
-
-    /* Tablet Responsiveness (768px - 1024px) */
-    @media screen and (max-width: 991px) {
-      .container {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      html, body {
-        overflow-x: hidden;
-      }
-
-      section {
-        padding-left: 0;
-        padding-right: 0;
-      }
-    }
-
-    /* Mobile Responsiveness (below 768px) */
-    @media screen and (max-width: 767px) {
-      .container {
-        width: 100% !important;
-        max-width: 100%;
-        padding-left: 12px !important;
-        padding-right: 12px !important;
-        margin: 0 !important;
-      }
-
-      section {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 !important;
-      }
-
-      .flex-container,
-      .flex-wrapper {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .grid-container {
-        grid-template-columns: 1fr;
-      }
-
-      img {
-        width: 100%;
-        height: auto;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
-
-      h3 {
-        font-size: 18px;
-      }
-    }
-
-    /* Small Mobile (below 480px) */
-    @media screen and (max-width: 479px) {
-      html, body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-        margin: 0;
-        padding: 0;
-      }
-
-      .container {
-        width: 100% !important;
-        max-width: 100%;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        margin: 0 !important;
-        box-sizing: border-box !important;
-      }
-
-      section {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-
-      .flex-container,
-      .flex-wrapper {
-        flex-direction: column;
-        width: 100%;
-        max-width: 100%;
-        gap: 12px;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-
-      .grid-container {
-        grid-template-columns: 1fr;
-        width: 100%;
-        max-width: 100%;
-        padding: 0 !important;
-      }
-
-      main, .main-content {
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-      }
-
-      h1 {
-        font-size: 20px;
-        word-break: break-word;
-      }
-
-      h2 {
-        font-size: 18px;
-        word-break: break-word;
-      }
-
-      h3 {
-        font-size: 16px;
-        word-break: break-word;
-      }
-    }
-  </style>
   </style>
 
 </head>
