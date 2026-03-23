@@ -642,12 +642,12 @@
 
     @media screen and (max-width: 479px) {
       .testimonial-tab-menu {
-        gap: 8px !important;
+        gap: 6px !important;
         padding: 0 10px !important;
         justify-content: center !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
+        flex-wrap: wrap !important;
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
       }
 
       .testimonial-dot {
@@ -656,7 +656,8 @@
       }
 
       .tab-link {
-        padding: 6px !important;
+        padding: 4px !important;
+        flex-shrink: 0;
       }
     }
   </style>
