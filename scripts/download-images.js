@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import https from 'https';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -49,6 +49,30 @@ const images = [
   }
 ];
 
+function downloadImage(url, filepath) {
+  return new Promise((resolve, reject) => {
+    https.get(url, (response) => {
+      if (response.statusCode !== 200) {
+        reject(new Error(`HTTP error! status: ${response.statusCode}`));
+        return;
+      }
+
+      const fileStream = fs.createWriteStream(filepath);
+      response.pipe(fileStream);
+
+      fileStream.on('finish', () => {
+        fileStream.close();
+        resolve();
+      });
+
+      fileStream.on('error', (err) => {
+        fs.unlink(filepath, () => {});
+        reject(err);
+      });
+    }).on('error', reject);
+  });
+}
+
 async function downloadImages() {
   const imageDir = path.join(__dirname, '../images');
   
@@ -61,15 +85,8 @@ async function downloadImages() {
   for (const image of images) {
     try {
       console.log(`[v0] Downloading ${image.filename}...`);
-      const response = await fetch(image.url);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const buffer = await response.buffer();
       const filepath = path.join(imageDir, image.filename);
-      fs.writeFileSync(filepath, buffer);
+      await downloadImage(image.url, filepath);
       console.log(`[v0] Saved ${image.filename}`);
     } catch (error) {
       console.error(`[v0] Error downloading ${image.filename}:`, error.message);
